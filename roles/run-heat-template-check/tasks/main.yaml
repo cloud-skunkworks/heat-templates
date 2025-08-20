@@ -4,8 +4,6 @@
         set -x
         source ${DEVSTACK_BASE_DIR}/devstack/openrc admin admin
         source ${DEVSTACK_BASE_DIR}/devstack/functions-common
-        neutron_service=$(get_or_create_service "neutron" "network" "Neutron Service")
-        get_or_create_endpoint $neutron_service "$REGION_NAME" "http://localhost"
         aodh_service=$(get_or_create_service "aodh" "alarming" "OpenStack Alarming Service")
         get_or_create_endpoint $aodh_service "$REGION_NAME" "http://localhost"
         mistral_service=$(get_or_create_service "mistral" "workflowv2" "Workflow Service v2")
